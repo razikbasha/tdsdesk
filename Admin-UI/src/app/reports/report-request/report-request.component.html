@@ -1,0 +1,80 @@
+<!-- begin report request component -->
+<div id="report-request-component">
+  <form [formGroup]="reportRequestForm" (ngSubmit)="onSubmit()" class="form-horizontal" >
+      <!-- begin row -->
+      <div class="row">
+          <!-- begin col-6 Object Request -->
+          <div class="col-md-6">
+              <!-- begin panel -->
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Data Source</label>
+                  <div class="col-md-9">
+                      <select class="form-control" formControlName="reportDataSource" >
+                          <option *ngFor="let source of listOfDataSources" [value]="source" >{{ source }}</option>                       
+                      </select>
+                  </div>
+              </div>  
+             
+              <div class="form-group" *ngIf="false">
+                    <label class="col-md-3 control-label" >Columns</label>
+                    <div class="col-md-9">
+                      <!--<div id="report-jstree-checkable"></div>-->
+                      <select class="form-control" formControlName="reportableColumn" >
+                              <option *ngFor="let map of listOfReportableColumnMaps" [value]="map" >{{ map.header }}</option>                       
+                          </select>
+                    </div>
+                </div>
+          </div>
+          <!-- end col-6 -->
+          <div class="col-md-6">
+                <div class="form-group">
+                        <label class="col-md-3 control-label">Report Type</label>
+                        <div class="col-md-9">
+                            <select class="form-control" formControlName="reportType" >
+                                <option *ngFor="let reportType of listOfReportTypes" [value]="reportType" >{{ reportType }}</option>                       
+                            </select>
+                        </div>
+                    </div>
+              <div class="form-group" *ngIf="false">
+                  <label class="col-md-3 control-label">Matrix</label>
+                  <div class="col-md-9">
+                      <select class="form-control" formControlName="reportMatrix" >
+                          <option *ngFor="let matrix of listOfMatrixes" [value]="matrix" >{{ matrix }}</option>                       
+                      </select>
+                  </div>
+              </div> 
+              <div class="form-group" *ngIf="false">
+                  <label class="col-md-3 control-label">Frequency</label>
+                  <div class="col-md-9">
+                      <select class="form-control" formControlName="reportFrequency" >
+                          <option *ngFor="let frequency of listOfFrequencies" [value]="frequency" >{{ frequency }}</option>                       
+                      </select>
+                  </div>
+              </div>  
+              <div class="form-group"  *ngIf="isDateRange">
+                    <label class="col-md-3 control-label" >Date Range</label>
+                    <div class="col-md-9">
+                      <div class="input-group input-daterange">
+                        <input type="text" class="form-control" name="reportStartDate" placeholder="Date Start"  *ngIf="isDateRange"/>
+                        <span class="input-group-addon">to</span>
+                        <input type="text" class="form-control" name="reportEndDate" placeholder="Date End"  *ngIf="isDateRange"/>
+                      </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+      <!-- end row -->
+      <!-- start row -->
+      <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
+                <div class="pull-right">
+                        <button (click)="onGenerateReport()" type="button" class="btn btn-success m-r-5 m-b-5">Generate Report</button>
+                </div>
+        </div>
+      </div>
+      <!-- end row -->
+  </form>
+</div>   
+<!-- end report request component -->

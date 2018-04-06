@@ -1,0 +1,15 @@
+# Node build artifacts
+iirp-tenant-set1/
+npm-debug.log
+bin
+pkg
+
+# Local development
+*.env
+*.dev
+.DS_Store
+
+# Docker
+#Dockerfile
+#Dockerfile.production
+#docker-compose.yml

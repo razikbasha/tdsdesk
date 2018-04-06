@@ -1,0 +1,8 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css';
+
+#fileupload-login-page-logo {
+    float: left;
+    z-index: -1;
+}
+
+.font-red { color: red; }

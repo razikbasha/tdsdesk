@@ -1,0 +1,21 @@
+# Node build artifacts
+node_modules/
+npm-debug.log
+dist
+Admin-UI/node_modules/
+Admin-UI/npm-debug.log
+Admin-UI/dist
+Admin-UI-Server/iirp-web-server/node_modules
+Admin-UI-Server/iirp-web-server/npm-debug.log
+Admin-UI-Server/iirp-web-server/dist
+
+
+
+# Local development
+*.env
+*.dev
+.DS_Store
+
+# Docker
+#Dockerfile
+#docker-compose.yml
